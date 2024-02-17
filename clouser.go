@@ -7,6 +7,8 @@ func main(){
 	fmt.Println(nextGen())
 	fmt.Println(nextGen())
 	fmt.Println(nextGen())
+	// add func
+	addFunc()
 
 	// nextEven := makeEvenGenerator() 
 	// fmt.Println(nextEven())
@@ -21,4 +23,12 @@ func evenGenrator() (func() uint){
 		i += 2
 		return ret
 	}
+}
+
+func addFunc(){
+	add := func(a , b int) int{
+		return a+b
+	}
+
+	fmt.Println(add(1, 2))
 }
