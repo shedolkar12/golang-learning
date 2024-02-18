@@ -1,6 +1,9 @@
 package main
 import "fmt"
 
+// clouser is the way to create function inside function
+
+
 func main(){
 	nextGen := evenGenrator()
 	fmt.Println(nextGen())
@@ -13,6 +16,8 @@ func main(){
 	// nextEven := makeEvenGenerator() 
 	// fmt.Println(nextEven())
 	// fmt.Println(nextEven())
+
+	incrementFunc()
 
 }
 
@@ -31,4 +36,14 @@ func addFunc(){
 	}
 
 	fmt.Println(add(1, 2))
+}
+
+func incrementFunc(){
+	x := 0
+	increment := func ()int{
+		x++
+		return x
+	}
+	fmt.Println("Increament:", increment())
+	fmt.Println("Increament:", increment())
 }

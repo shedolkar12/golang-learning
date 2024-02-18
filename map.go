@@ -19,6 +19,9 @@ func main(){
 	// fmt.Println(arr)
 	find_duplicates(arr)
 	smallest_num()
+	var w int = 2;
+	fmt.Println(w)
+
 }
 
 func test(n int){
