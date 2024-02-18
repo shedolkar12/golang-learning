@@ -1,7 +1,8 @@
 package main
+
 import "fmt"
 
-func main(){
+func main() {
 	x := 10
 	fmt.Println("before", x)
 	mod(&x)
@@ -10,8 +11,8 @@ func main(){
 	var y float64 = 10.0
 	square(&y)
 	fmt.Println(y)
-	a:=1
-	b:=2
+	a := 1
+	b := 2
 	fmt.Println(a, b)
 	swap(&a, &b)
 	fmt.Println(a, b)
@@ -23,20 +24,20 @@ func main(){
 	fmt.Println("changed z:", *z)
 }
 
-func mod(x *int){
+func mod(x *int) {
 	*x = 12
 }
 
-func square(x *float64){
+func square(x *float64) {
 	*x = *x * *x
 }
 
-func swap(a *int, b *int){
+func swap(a *int, b *int) {
 	temp := *a
 	*a = *b
 	*b = temp
 }
 
-func change(z *int){
+func change(z *int) {
 	*z = 21
 }

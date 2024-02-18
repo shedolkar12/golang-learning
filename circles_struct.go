@@ -48,7 +48,7 @@ func (c *Circle) area() float64{
 	area := math.Pi * (c.r) * (c.r) 
 	return area
 }
-
+// receiver
 func (rect *Rectangle) area() float64{
 	l := distance(rect.x1, rect.y1, rect.x1, rect.y2)
 	w := distance(rect.x1, rect.y1, rect.x2, rect.y1)
