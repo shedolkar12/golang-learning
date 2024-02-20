@@ -14,8 +14,17 @@ const (
 	ADMIN_PASSWORD = "admin"
 )
 
+type USER struct{
+	id int64
+	name string
+}
+
 func helloWorld(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World!")
+	u := &USER{id: 123, name: "Rajesh"}
+	u.id = 1234
+	u.name = "Rajesh"
+	// fmt.Fprintf(w, "")
+	w.Write([]byte("welcome !!!\n"))
 }
 func BasicAuth(handler http.HandlerFunc, realm string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -34,6 +43,7 @@ func BasicAuth(handler http.HandlerFunc, realm string) http.HandlerFunc {
 
 func main() {
 	http.HandleFunc("/", BasicAuth(helloWorld, "Please enter your username and password"))
+	fmt.Println("server started...")
 	err := http.ListenAndServe(CONN_HOST+":"+CONN_PORT, nil)
 	if err != nil {
 		log.Fatal("error starting http server : ", err)
